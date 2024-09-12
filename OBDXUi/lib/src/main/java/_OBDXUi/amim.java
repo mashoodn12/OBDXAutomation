@@ -21,14 +21,121 @@ public class amim {
 		this.driver=driver;
 	}
 	
+	public WebElement amim_button() {
+		return driver.findElement(PageElements.amim_button);
+	}
+	
+	public WebElement invest_option() {
+		return driver.findElement(PageElements.invest_option);
+	}
+	
+	public WebElement continue_button() {
+		return driver.findElement(PageElements.continue_button);
+	}
+	
+	public WebElement portfolio_number() {
+		return driver.findElement(PageElements.portfolio_number);
+	}
+	
+	public WebElement fundplan() {
+		return driver.findElement(PageElements.fundplan);
+	}
+	
+	public WebElement fundclass() {
+		return driver.findElement(PageElements.fundclass);
+	}
+	
+	public WebElement amim_next() {
+		return driver.findElement(PageElements.amim_next);
+	}
+	
+	public WebElement accept() {
+		return driver.findElement(PageElements.accept);
+	}
+	
+	public WebElement invest_button() {
+		return driver.findElement(PageElements.invest_button);
+	}
+	
+	public WebElement makeanotherinvestment() {
+		return driver.findElement(PageElements.makeanotherinvestment);
+	}
+	
+	public WebElement withdraw_option() {
+		return driver.findElement(PageElements.withdraw_option);
+	}
+	
+	public WebElement w_portfolio_number() {
+		return driver.findElement(PageElements.w_portfolio_number);
+	}
+	
+	public WebElement w_fundplan() {
+		return driver.findElement(PageElements.w_fundplan);
+	}
+	
+	public WebElement redeem_button() {
+		return driver.findElement(PageElements.redeem_button);
+	}
+	
+	public WebElement convert_option() {
+		return driver.findElement(PageElements.convert_option);
+	}
+	
+	public WebElement c_portfolio_number() {
+		return driver.findElement(PageElements.c_portfolio_number);
+	}
+	
+	public WebElement c_fundplan() {
+		return driver.findElement(PageElements.c_fundplan);
+	}
+	
+	public WebElement c_fundclass() {
+		return driver.findElement(PageElements.c_fundclass);
+	}
+	
+	public WebElement show_balance() {
+		return driver.findElement(PageElements.show_balance);
+	}
+	
+	public WebElement next_button() {
+		return driver.findElement(PageElements.next_button);
+	}
+	
+	public WebElement amount() {
+		return driver.findElement(PageElements.amount);
+	}
+	
+	public WebElement save() {
+		return driver.findElement(PageElements.save);
+	}
+	
+	public WebElement homebutton() {
+		return driver.findElement(PageElements.homebutton);
+	}
+	
+	
 	public void amim_pay() throws InterruptedException {
 		impwait(30);
-		driver.findElement(By.xpath("//android.widget.TextView[@text=\"SHOW BALANCE\"]"));
-		WebElement amim_button = driver.findElement(By.xpath("//android.widget.TextView[@text=\"Al Meezan Investment\"]"));
-		amim_button.click();
+		show_balance();
+		amim_button().click();
 		Thread.sleep(3000);
 		impwait(20);
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Invest\"]"));
+		
+		//invest
+		investfunction();
+		
+		//withdraw
+		redeemfunction();
+		
+		//convert
+		convertfunction();
+		
+		homebutton().click();
+		
+	}
+	
+	public void investfunction() throws InterruptedException {
+		invest_option().click();
 //		performScroll(driver,525,2121,900);
 //		Thread.sleep(3000);
 //		performScrollUp(driver,525,740,700);
@@ -44,139 +151,103 @@ public class amim {
 //		performScroll(driver,525,2121,1600);
 //		Thread.sleep(2000);
 //		performScrollUp(driver,525,326,1600);
+		continue_button().click();
 		Thread.sleep(1000);
-		WebElement invest = driver.findElement(By.xpath("//android.widget.Button[@text=\"Invest\"]"));
-		invest.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.webkit.WebView[@text=\"Invest - Meezan Bank\"]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View")).click();
-		Thread.sleep(3000);
-		performScroll(driver,490,1317,520);
-		Thread.sleep(1000);
-		performScroll(driver,490,1317,520);
-		Thread.sleep(1000);
-		testTapByCoordinates("176399-2");
-		Thread.sleep(1000);
-		testTapByCoordinates("Continue");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//android.webkit.WebView[@text=\"Invest - Meezan Bank\"]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.view.View")).click();
-		Thread.sleep(2000);
-		testTapByCoordinates("AL MEEZAN MUTUAL FUND");
-		Thread.sleep(1000);
-		testTapByCoordinates("MEEZAN ISLAMIC FUND");
-		Thread.sleep(2000);
-		testTapByCoordinates("Continue");
-		Thread.sleep(1000);
+		next_button().click();
 		driver.findElement(By.xpath("//android.widget.Button[@text=\"Next\"]")).click();
 		impwait(10);
-		WebElement investamount = driver.findElement(By.xpath("//android.webkit.WebView[@text=\"Invest | amin-investment-invest-stage2\"]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText"));
-		investamount.click();
-		investamount.clear();
-		investamount.sendKeys("1000");
+		amount().click();
+		amount().clear();
+		amount().sendKeys("1000");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//android.widget.Button[@text=\"Next\"])[2]")).click();
-		Thread.sleep(2000);
-		impwait(10);
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Accept\"]")).click();
+		amim_next().click();
 		Thread.sleep(2000);
 		impwait(10);
-		WebElement investbtn = driver.findElement(By.xpath("//android.widget.Button[@text=\"Invest\"]"));
-		investbtn.click();
+		accept().click();
+		Thread.sleep(2000);
 		impwait(10);
-		driver.findElement(By.xpath("//android.widget.Image[@text=\"save-icon\"]")).click();
+		invest_button().click();
+		impwait(10);
+		save().click();
 		Thread.sleep(2000);
 		testTapByCoordinates("Close");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Make Another Investment\"]")).click();
-		
-		//withdraw
+		makeanotherinvestment().click();		
+
+
+	}
+	
+	public void redeemfunction() throws InterruptedException {
 		impwait(10);
-		WebElement withdraw = driver.findElement(By.xpath("//android.widget.Button[@text=\"Withdraw\"]"));
-		withdraw.click();
+		withdraw_option().click();
 		Thread.sleep(3000);
-		testTapByCoordinates("176399-900");
-		Thread.sleep(1000);
-		performScroll(driver,573,1039,750);
-		Thread.sleep(1000);
-		testTapByCoordinates("176399-2");
-		Thread.sleep(1000);
-		testTapByCoordinates("MEEZAN ISLAMIC INCOME FUND");
-		Thread.sleep(1000);
-		testTapByCoordinates("MEEZAN CASH FUND");
-		Thread.sleep(1000);
-		testTapByCoordinates("GROWTH-C");
-		Thread.sleep(1000);
-		testTapByCoordinates("GROWTH-C");
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Next\"]")).click();
+		next_button().click();
 		impwait(10);
-		WebElement withdrawamount = driver.findElement(By.xpath("//android.webkit.WebView[@text=\"Redeem | amin-investment-redeem-stage2\"]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText"));
-		withdrawamount.click();
-		withdrawamount.clear();
-		withdrawamount.sendKeys("1000");
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Next\"]")).click();
+		amount().click();
+		amount().clear();
+		amount().sendKeys("1000");
+		next_button().click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Accept\"]")).click();
+		accept().click();
 		impwait(10);
-		WebElement withdrawbtn = driver.findElement(By.xpath("//android.widget.Button[@text=\"Redeem\"]"));
-		Thread.sleep(2000);
-		withdrawbtn.click();
+		redeem_button().click();
 		impwait(30);
-		driver.findElement(By.xpath("//android.widget.Image[@text=\"save-icon\"]")).click();
+		save().click();
 		Thread.sleep(2000);
 		testTapByCoordinates("Close");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//android.widget.Image[@text=\"home-icon-purple\"]")).click();
+		homebutton().click();
 		Thread.sleep(3000);
 		
-		//convert
-		driver.findElement(By.xpath("//android.view.View[@text=\"Al Meezan Investment\"]")).click();
+	}
+	
+	public void convertfunction() throws InterruptedException {
+		amim_button().click();
 		impwait(10);
-		WebElement convert = driver.findElement(By.xpath("//android.widget.Button[@text=\"Convert\"]"));
-		Thread.sleep(1000);
-		convert.click();
+		convert_option().click();
 		Thread.sleep(2000);
-		testTapByCoordinates("176399-900");
-		Thread.sleep(1000);
-		performScroll(driver,530,1059,750);
-		Thread.sleep(1000);
-		testTapByCoordinates("176399-2");
-		Thread.sleep(1000);
-		testTapByCoordinates("MEEZAN ISLAMIC INCOME FUND");
-		Thread.sleep(1000);
-		testTapByCoordinates("MEEZAN CASH FUND");
-		Thread.sleep(1000);
-		testTapByCoordinates("GROWTH-C");
-		Thread.sleep(1000);
-		testTapByCoordinates("INCOME-C");
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Next\"]")).click();
+//		testTapByCoordinates("176399-900");
+//		Thread.sleep(1000);
+//		performScroll(driver,530,1059,750);
+//		Thread.sleep(1000);
+//		testTapByCoordinates("176399-2");
+//		Thread.sleep(1000);
+//		testTapByCoordinates("MEEZAN ISLAMIC INCOME FUND");
+//		Thread.sleep(1000);
+//		testTapByCoordinates("MEEZAN CASH FUND");
+//		Thread.sleep(1000);
+//		testTapByCoordinates("GROWTH-C");
+//		Thread.sleep(1000);
+//		testTapByCoordinates("INCOME-C");
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//android.widget.Button[@text=\"Next\"]")).click();
+//		Thread.sleep(2000);
+//		testTapByCoordinates("MEEZAN ISLAMIC INCOME FUND");
+//		Thread.sleep(1000);
+//		testTapByCoordinates("AL MEEZAN MUTUAL FUND");
+//		Thread.sleep(1000);
+//		testTapByCoordinates("GROWTH-B");
+//		Thread.sleep(1000);
+//		testTapByCoordinates("INCOME-B");
+//		Thread.sleep(1000);
+		amount().click();
+		amount().clear();
+		amount().sendKeys("1000");
+		next_button().click();
 		Thread.sleep(2000);
-		testTapByCoordinates("MEEZAN ISLAMIC INCOME FUND");
-		Thread.sleep(1000);
-		testTapByCoordinates("AL MEEZAN MUTUAL FUND");
-		Thread.sleep(1000);
-		testTapByCoordinates("GROWTH-B");
-		Thread.sleep(1000);
-		testTapByCoordinates("INCOME-B");
-		Thread.sleep(1000);
-		WebElement convertamount = driver.findElement(By.xpath("//android.webkit.WebView[@text=\"Convert | amin-investment-convert-stage2\"]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText"));
-		convertamount.click();
-		convertamount.clear();
-		convertamount.sendKeys("1000");
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Next\"]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//android.widget.Button[@text=\"Accept\"]")).click();
+		accept().click();
 		impwait(10);
 		WebElement convertbtn = driver.findElement(By.xpath("//android.widget.Button[@text=\"Convert\"]"));
 		Thread.sleep(1000);
 		convertbtn.click();
 		impwait(30);
-		driver.findElement(By.xpath("//android.widget.Image[@text=\"save-icon\"]")).click();
+		save().click();
 		Thread.sleep(2000);
 		testTapByCoordinates("Close");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//android.widget.Image[@text=\"home-icon-purple\"]")).click();
+	
 	}
+	
 	private void impwait(int duration) {
 		driver.manage().timeouts().implicitlyWait(duration, TimeUnit.SECONDS);
 	}
