@@ -87,6 +87,28 @@ public class PageElements {
 	public static final By accselection = By.xpath("//android.widget.TextView[@text=\"SARFARAZ UR REHMAN/FARAH NAZ\"]");
 	public static final By paysadqa = By.xpath("//android.widget.Button[@text=\"Pay Sadqa Now\"]");
 	
+	//AMIM
+	public static final By amim_button = By.xpath("//android.widget.TextView[@text=\"Al Meezan Mutual Funds\"]");
+	public static final By invest_option = By.xpath("(//android.widget.Button[@text=\"Invest\"])[1]");
+	public static final By continue_button = By.xpath("//android.widget.TextView[@text=\"Continue\"]");
+	public static final By portfolio_number = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-2\"]");
+	public static final By fundplan = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-6\"]");
+	public static final By fundclass = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-8\"]");
+	public static final By amim_next = By.xpath("//android.widget.EditText[@resource-id=\"specific-amount|input\"]"); 
+	public static final By accept = By.xpath("//android.widget.EditText[@resource-id=\"specific-amount|input\"]");
+	public static final By invest_button = By.xpath("//android.widget.Button[@text=\"Invest\"]");
+	public static final By makeanotherinvestment = By.xpath("//android.widget.Button[@text=\"Make Another Investment\"]");
+	public static final By withdraw_option = By.xpath("//android.widget.Button[@text=\"Make Another Investment\"]");
+	public static final By w_portfolio_number = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-45\"]");
+	public static final By w_fundplan = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-47\"]");
+	public static final By w_fundclass = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-49\"]");
+	public static final By redeem_button = By.xpath("//android.widget.Button[@text=\"Redeem\"]");
+	public static final By convert_option = By.xpath("//android.widget.Button[@text=\"Convert\"]");
+	public static final By c_portfolio_number = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-59\"]");
+	public static final By c_fundplan = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-61\"]");
+	public static final By c_fundclass = By.xpath("//android.widget.Spinner[@resource-id=\"oj-select-choice-65\"]");
+	
+	
 	//options and settings
 	public static final By optionslistbutton = By.xpath("//android.widget.Image[@text=\"hamburger-icon\"]");
 	public static final By myprofilebutton = By.xpath("//android.view.MenuItem[@text=\"My Profile\"]");
@@ -116,4 +138,3 @@ public class PageElements {
 	public static final By updatepassword = By.xpath("//android.widget.Button[@text=\"Update Password\"]");
 	
 }
-
